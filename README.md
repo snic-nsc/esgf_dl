@@ -13,7 +13,7 @@
 git clone https://github.com/snic-nsc/esgf_dl.git
 cd esgf_dl && sudo singularity build esgf_dl.simg Singularity
 ```
-- You could also download a prebuilt container image from [https://esg-dn2.nsc.liu.se/virtualtestbed/esgf_dl.simg](https://esg-dn2.nsc.liu.se/virtualtestbed/esgf_dl.simg); it's `sha256` checksum is `184cd4f7ad6ae959e31b40e5e0e4e11f75d955b5420dce88c1622a1d3a3c2e3d`.
+- You could also download a prebuilt container image from [https://esg-dn2.nsc.liu.se/virtualtestbed/esgf_dl.simg](https://esg-dn2.nsc.liu.se/virtualtestbed/esgf_dl.simg); its `sha256` checksum is `184cd4f7ad6ae959e31b40e5e0e4e11f75d955b5420dce88c1622a1d3a3c2e3d`.
 
 ## Downloading ESGF data
 
