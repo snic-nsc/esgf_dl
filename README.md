@@ -38,6 +38,7 @@ bash wget-xxx.sh
 
 - This is only for advanced users; if your needs have not been met above, or if you wish to test services, you can manually run myproxy-logon using the python client.
 - To do this, you'll need to know your myproxy host, and the username. If your openid is `https://esg-dn1.nsc.liu.se/esgf-idp/openid/testuser`, your myproxy host is `esg-dn1.nsc.liu.se` and your username is `testuser`.
+- Note that the above statement may not always apply; some sites such as CEDA use external identity providers, and this method of deducing myproxy host and username will not work. If you know the actual endpoint and identity, use those instead.
 ```
 singularity shell esgf_dl.simg
 rm -rf $HOME/.esg
