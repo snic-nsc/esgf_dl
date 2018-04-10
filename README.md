@@ -44,7 +44,7 @@ bash wget-xxx.sh -H
 ```
 - If using Docker, simply run the docker container, mounting your home directory onto the container, and execute the wget script with the `-H' flag, and follow the prompts.
 ```
-sudo docker run --rm -it -v $HOME:/opt/esgf_dl/mnt esgf-wget-env bash
+sudo docker run --rm -it -v $HOME:/opt/esgf_dl/mnt pchengi/esgf-wget-env bash
 # The above command mounts your home directory under /opt/esgf_dl/mnt, and you start in /opt/esgf_dl. 
 # It is recommended that you create a new directory for downloading the files, under /opt/esgf_dl/mnt, copy the wget script there, and execute it.
 # Remember that the docker container runs as root; don't forget to do a chown -R <userid>:<groupid> <download dir> using the userid and groupid of the user who owns the home directory on the host machine.
@@ -62,7 +62,7 @@ bash wget-xxx.sh
 
 - If using Docker,
 ```
-sudo docker run --rm -it -v $HOME:/opt/esgf_dl/mnt esgf-wget-env bash
+sudo docker run --rm -it -v $HOME:/opt/esgf_dl/mnt pchengi/esgf-wget-env bash
 Change to directory containing the wget script, and execute
 bash wget-xxx.sh
 ```
@@ -81,7 +81,7 @@ myproxyclient logon -b -T -s <myproxy host name> -l <username> -o ~/.esg/credent
 ```
 - If using Docker, 
 ```
-sudo docker run --rm -it -v $HOME:/opt/esgf_dl/mnt esgf-wget-env bash
+sudo docker run --rm -it -v $HOME:/opt/esgf_dl/mnt pchengi/esgf-wget-env bash
 rm -rf $HOME/.esg
 bash /opt/esgf_dl/get_esgf_certs.sh
 myproxyclient logon -b -T -s <myproxy host name> -l <username> -o ~/.esg/credentials.pem -C ~/.esg/certificates
