@@ -2,7 +2,11 @@
 
 - This repo contains container recipes in an attempt to make it easier for users to download data from ESGF, irrespective of what operating system they use. This has been tested and known to work on Linux, Windows 10, and Mac OS.
 - Singularity has been tested on Linux and Windows 10, and Docker on all platforms.
+## Which one to use
 - The singularity container can be used on a machine without needing to be root or root-equivalent.
+- The singularity shell environment defaults to the same userid/groupid as that of the user running the environment, so no need to worry about file-permissions.
+- The docker container runs as user 'root'; any files downloaded within the container, even onto the manually mounted home directory, will be owned by 'root'. You have to manually use `chown` to change ownership.
+- Singularity is supported on all major linux platforms and can be run natively, but installation on Mac requires vagrant/vm deployment, costing the advantage of auto-mounting.
 - Depending on which container you choose, you need to have Singularity or Docker installed on your host machine. it's out of the scope of this document to explain installation instructions, but the following urls have been found to be useful:
     - url 1 (fixme)
     - url 2 (fixme)
