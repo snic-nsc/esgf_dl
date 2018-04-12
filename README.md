@@ -52,11 +52,11 @@ bash wget-xxx.sh -H
 - If using Docker, simply run the Docker container, mounting your home directory onto the container, and execute the wget script with the `-H' flag, and follow the prompts.
 ```
 sudo docker run --rm -it -v $HOME:/opt/esgf_dl/mnt pchengi/esgf-wget-env bash
-# The above command mounts your home directory under /opt/esgf_dl/mnt, and you start in /opt/esgf_dl. 
-# It is recommended that you create a new directory for downloading the files, under /opt/esgf_dl/mnt, copy the wget script there, and execute it.
-# Remember that the Docker container runs as root; don't forget to do a chown -R <userid>:<groupid> <download dir> using the userid and groupid of the user who owns the home directory on the host machine.
 bash wget-xxx.sh -H
 ```
+The `docker run` command above mounts your home directory under /opt/esgf_dl/mnt, and you start in /opt/esgf_dl. 
+It is recommended that you create a new directory for downloading the files, under /opt/esgf_dl/mnt, copy the wget script there, and execute it.
+Remember that the Docker container runs as root; don't forget to do a chown -R <userid>:<groupid> <download dir> using the userid and groupid of the user who owns the home directory on the host machine. You don't need to do this however on a Mac.
 
 ## Downloading ESGF data using myproxy certificate
 
