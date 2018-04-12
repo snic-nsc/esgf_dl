@@ -4,9 +4,9 @@
 - The Singularity has been tested and found to work on Linux, and the Docker container has been tested and found to work on Linux, Windows 10, and MacOS.
 ## Which one to use
 - If you are running MacOS or Windows, your choice has to be Docker.
-- The singularity container can be used on a machine without needing to be root or root-equivalent.
-- The singularity shell environment defaults to the same userid/groupid as that of the user running the environment, so no need to worry about file-permissions.
-- The docker container runs as user 'root'; any files downloaded within the container, even onto the manually mounted home directory, will be owned by 'root'. You have to manually use `chown` to change ownership; you don't need to do this on MacOS.
+- The Singularity container can be used on a machine without needing to be root or root-equivalent.
+- The Singularity shell environment defaults to the same userid/groupid as that of the user running the environment, so no need to worry about file-permissions.
+- The Docker container runs as user 'root'; any files downloaded within the container, even onto the manually mounted home directory, will be owned by 'root'. You have to manually use `chown` to change ownership; you don't need to do this on MacOS.
 - Singularity is supported on all major linux platforms and can be run natively, but installation on Mac requires vagrant/vm deployment, costing the advantage of auto-mounting.
 - Depending on which container you choose, you need to have Singularity or Docker installed on your host machine. it's out of the scope of this document to explain installation instructions, but the following urls have been found to be useful:
     - [Singularity Installation on Linux](https://singularity.lbl.gov/install-linux)
@@ -16,7 +16,7 @@
 
 ## Singularity installation
 
-- The singularity build recipe is found in the file `Singularity`, in the `singularity` directory.
+- The Singularity build recipe is found in the file `Singularity`, in the `singularity` directory.
 - To build:
 ```
 git clone https://github.com/snic-nsc/esgf_dl.git
@@ -27,14 +27,14 @@ cd singularity && sudo singularity build esgf_dl.simg Singularity
 
 ## Docker installation
 
-- The docker build recipe is found in the file `Dockerfile`, in the `docker` directory.
+- The Docker build recipe is found in the file `Dockerfile`, in the `docker` directory.
 - To build:
 ```
 git clone https://github.com/snic-nsc/esgf_dl.git
 cd esgf_dl && git checkout 'v1.01'
 cd docker && sudo docker build -t esgf-wget-env .
 ```
-- The prebuilt container is also available on dockerhub; you can simply pull it down by:
+- The prebuilt container is also available on Dockerhub; you can simply pull it down by:
 ```
 sudo docker pull pchengi/esgf-wget-env
 ```
@@ -49,12 +49,12 @@ sudo docker pull pchengi/esgf-wget-env
 singularity shell esgf_dl.simg
 bash wget-xxx.sh -H
 ```
-- If using Docker, simply run the docker container, mounting your home directory onto the container, and execute the wget script with the `-H' flag, and follow the prompts.
+- If using Docker, simply run the Docker container, mounting your home directory onto the container, and execute the wget script with the `-H' flag, and follow the prompts.
 ```
 sudo docker run --rm -it -v $HOME:/opt/esgf_dl/mnt pchengi/esgf-wget-env bash
 # The above command mounts your home directory under /opt/esgf_dl/mnt, and you start in /opt/esgf_dl. 
 # It is recommended that you create a new directory for downloading the files, under /opt/esgf_dl/mnt, copy the wget script there, and execute it.
-# Remember that the docker container runs as root; don't forget to do a chown -R <userid>:<groupid> <download dir> using the userid and groupid of the user who owns the home directory on the host machine.
+# Remember that the Docker container runs as root; don't forget to do a chown -R <userid>:<groupid> <download dir> using the userid and groupid of the user who owns the home directory on the host machine.
 bash wget-xxx.sh -H
 ```
 
@@ -79,7 +79,7 @@ bash wget-xxx.sh
 - This is only for advanced users; if your needs have not been met above, or if you wish to test services, you can manually run myproxy-logon using the python client.
 - To do this, you'll need to know your myproxy host, and the username. If your openid is `https://esg-dn1.nsc.liu.se/esgf-idp/openid/testuser`, your myproxy host is `esg-dn1.nsc.liu.se` and your username is `testuser`.
 - Note that the above statement may not always apply; some sites such as CEDA use external identity providers, and this method of deducing myproxy host and username will not work. If you know the actual endpoint and identity, use those instead.
-- If using singularity, 
+- If using Singularity, 
 ```
 singularity shell esgf_dl.simg
 rm -rf $HOME/.esg
