@@ -47,11 +47,13 @@ sudo docker pull pchengi/esgf-wget-env
 - If using Singularity, simply enter the singularity shell, and execute the wget script with the `-H' flag, and follow the prompts
 ```
 singularity shell esgf_dl.simg
+cd <directory containing wget script>
 bash wget-xxx.sh -H
 ```
 - If using Docker, simply run the Docker container, mounting your home directory onto the container, and execute the wget script with the `-H' flag, and follow the prompts.
 ```
 sudo docker run --rm -it -v $HOME:/opt/esgf_dl/mnt pchengi/esgf-wget-env bash
+cd <directory containing wget script>
 bash wget-xxx.sh -H
 ```
 The `docker run` command above mounts your home directory under /opt/esgf_dl/mnt, and you start in /opt/esgf_dl. 
@@ -64,13 +66,14 @@ Remember that the Docker container runs as root; don't forget to do a chown -R <
 - If using Singularity,
 ```
 singularity shell esgf_dl.simg
+cd <directory containing wget script>
 bash wget-xxx.sh
 ```
 
 - If using Docker,
 ```
 sudo docker run --rm -it -v $HOME:/opt/esgf_dl/mnt pchengi/esgf-wget-env bash
-Change to directory containing the wget script, and execute
+cd <directory containing wget script>
 bash wget-xxx.sh
 ```
 
