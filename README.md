@@ -36,7 +36,7 @@ cd docker && sudo docker build -t esgf-wget-env .
 ```
 - The prebuilt container is also available on dockerhub; you can simply pull it down by:
 ```
-docker pull pchengi/esgf-wget-env
+sudo docker pull pchengi/esgf-wget-env
 ```
 
 ## Downloading ESGF data
