@@ -54,6 +54,7 @@ bash wget-xxx.sh -H
 ```
 sudo docker run --rm -it -v $HOME:/opt/esgf_dl/mnt pchengi/esgf-wget-env bash
 cd <directory containing wget script>
+(note that your home directory would be mounted under /opt/esgf_dl/mnt on the container)
 bash wget-xxx.sh -H
 ```
 The `docker run` command above mounts your home directory under /opt/esgf_dl/mnt, and you start in /opt/esgf_dl. 
