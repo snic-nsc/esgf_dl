@@ -20,10 +20,10 @@
 - To build:
 ```
 git clone https://github.com/snic-nsc/esgf_dl.git
-cd esgf_dl && git checkout 'v1.01'
+cd esgf_dl && git checkout 'v1.02'
 cd singularity && sudo singularity build esgf_dl.simg Singularity
 ```
-- You could also download a prebuilt container image from [https://esg-dn2.nsc.liu.se/virtualtestbed/esgf_dl.simg](https://esg-dn2.nsc.liu.se/virtualtestbed/esgf_dl.simg); its `sha256` checksum is `184cd4f7ad6ae959e31b40e5e0e4e11f75d955b5420dce88c1622a1d3a3c2e3d`.
+- You could also download a prebuilt container image from [https://esg-dn2.nsc.liu.se/virtualtestbed/esgf_dl.simg](https://esg-dn2.nsc.liu.se/virtualtestbed/esgf_dl.simg); its `sha256` checksum is `321137f6ddc4f8854d5e5770d79f8c1bdbafac4001666f73a2531e50f589de6c`.
 
 ## Docker installation
 
@@ -31,7 +31,7 @@ cd singularity && sudo singularity build esgf_dl.simg Singularity
 - To build:
 ```
 git clone https://github.com/snic-nsc/esgf_dl.git
-cd esgf_dl && git checkout 'v1.01'
+cd esgf_dl && git checkout 'v1.02'
 cd docker && sudo docker build -t esgf-wget-env .
 ```
 - The prebuilt container is also available on Dockerhub; you can simply pull it down by:
@@ -72,8 +72,9 @@ bash wget-xxx.sh
 
 - If using Docker,
 ```
-sudo docker run --rm -it -v $HOME:/opt/esgf_dl/mnt pchengi/esgf-wget-env bash
+sudo docker run --rm -it -v $HOME:/opt/esgf_dl/mnt pchengi/esgf-wget-env:v1.02 bash
 cd <directory containing wget script>
+(note that your home directory would be mounted under /opt/esgf_dl/mnt on the container)
 bash wget-xxx.sh
 ```
 
@@ -91,7 +92,7 @@ myproxyclient logon -b -T -s <myproxy host name> -l <username> -o ~/.esg/credent
 ```
 - If using Docker, 
 ```
-sudo docker run --rm -it -v $HOME:/opt/esgf_dl/mnt pchengi/esgf-wget-env bash
+sudo docker run --rm -it -v $HOME:/opt/esgf_dl/mnt pchengi/esgf-wget-env:v1.02 bash
 rm -rf $HOME/.esg
 bash /opt/esgf_dl/get_esgf_certs.sh
 myproxyclient logon -b -T -s <myproxy host name> -l <username> -o ~/.esg/credentials.pem -C ~/.esg/certificates
