@@ -52,7 +52,7 @@ bash wget-xxx.sh -H
 ```
 - If using Docker, simply run the Docker container, mounting your home directory onto the container, and execute the wget script with the `-H' flag, and follow the prompts.
 ```
-sudo docker run --rm -it -v $HOME:/opt/esgf_dl/mnt pchengi/esgf-wget-env bash
+sudo docker run --rm -it -v $HOME:/opt/esgf_dl/mnt pchengi/esgf-wget-env:v1.02 bash
 cd <directory containing wget script>
 (note that your home directory would be mounted under /opt/esgf_dl/mnt on the container)
 bash wget-xxx.sh -H
