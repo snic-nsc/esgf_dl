@@ -1,3 +1,4 @@
 *.simg
 test_wget.sh
-myproxy_pass
+myproxy_pass*
+sample-wget/.wget*
