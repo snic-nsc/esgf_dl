@@ -72,6 +72,8 @@ Remember that the Docker container runs as root; don't forget to do a chown -R <
 - If using Singularity,
 ```
 singularity shell esgf_dl.simg
+rm -rf $HOME/.esg
+bash /opt/esgf_dl/get_esgf_certs.sh
 cd <directory containing wget script>
 bash wget-xxx.sh
 ```
