@@ -23,7 +23,7 @@ git clone https://github.com/snic-nsc/esgf_dl.git
 cd esgf_dl && git checkout 'v1.02'
 cd singularity && sudo singularity build esgf_dl.simg Singularity
 ```
-- You could also download a prebuilt container image from [https://esg-dn2.nsc.liu.se/virtualtestbed/esgf_dl.simg](https://esg-dn2.nsc.liu.se/virtualtestbed/esgf_dl.simg); its `sha256` checksum is `321137f6ddc4f8854d5e5770d79f8c1bdbafac4001666f73a2531e50f589de6c`.
+- You could also download a prebuilt container image from [https://esg-dn2.nsc.liu.se/virtualtestbed/esgf_dl.simg](https://esg-dn2.nsc.liu.se/virtualtestbed/esgf_dl.simg); its `sha256` checksum is `dc75032b55580bd102e3b68ec4b4ac3c58cab500f6eb18d3c6d7be85a6fea3c6`.
 
 ## Docker installation
 
